@@ -1,0 +1,333 @@
+/*FONTS*/
+
+	/*latin LATO 400*/
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Lato Regular'), local('Lato-Regular'), url(resourses\fonts\Lato-Regular.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /*latin LATO 700*/
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Lato Bold'), local('Lato-Bold'), url(resourses\fonts\Lato-Bold.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /*latin LATO 900 */
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Lato Black'), local('Lato-Black'), url(resourses\fonts\Lato-Black.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  /*latin MAVEN PRO 400*/
+@font-face {
+	font-family: 'Maven Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Maven Pro Regular'), local('MavenPro-Regular'), url(resourses\fonts\MavenPro-Regular.ttf) format('truetype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+	display: grid;
+	grid-template: "head"
+								 "portfolio"
+								 "about-me"
+								 "get-int-touch"
+								 "copyright";
+}
+
+/*HEADER*/
+header{
+	
+	object-fit: cover;
+	width: 100%;
+	position: absolute;
+}
+
+nav{
+	width: 100%;
+	height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #323232;
+}
+
+.header-triangle{
+	position: relative;
+	top: 60%;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 43px 67.5px 0 67.5px;
+	border-color: #323232 transparent transparent transparent;
+}
+
+nav a{
+	font-family: Lato, sans-serif;
+	font-size: 10pt;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #ffff;
+	text-decoration: none;
+	margin: 20px;
+}
+
+a:hover, a[href='#portfolio']{
+	color: #2eb398;
+}
+
+#logo{
+	margin: 0 40px;
+	object-fit: cover;
+	height: 71%;
+}
+
+
+/*PORTFOLIO*/
+#portfolio{
+		text-align: center;
+		z-index: -1;
+		width: 100%;
+		height: 200%
+}
+
+.row{
+	box-sizing: border-box;
+		width: 100%;
+		height: 20%;
+		padding-left: 4%;
+		padding-right: 4%;
+		display: grid;
+		grid-auto-columns: 21.2%;
+		grid-auto-flow: column;
+		justify-content: center;
+		justify-items: center;
+		margin: -59px 0;
+}
+
+#portfolio .row:first-child{
+	margin-top: 0;
+}
+
+div#portfolio .row:last-child {
+	margin-bottom: 0;
+}
+
+.hex{
+	clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 6% 75%, 6% 26%);
+}
+.pic-portfolio{
+	width: 105%;
+}
+
+/*ABOUT ME*/
+#about-me{
+	height: 307px;	
+	padding: 100px 12%;
+	background-color: #2eb398;
+	color: #d7fcf5;
+}
+
+h2{
+	margin-top: -10px;
+	font-size: 33pt;
+	font-weight: 400;
+	font-family: 'Maven Pro', sans-serif;
+}
+
+#about-me h3{
+	font-size: 19pt;
+	font-family: 'Maven Pro', sans-serif;
+	color:	#20816d;
+}
+
+#about-me p{
+	margin-top: 20px;
+	line-height: 1.9;
+	font-size: 13pt;
+	font-family: 'Maven Pro', sans-serif;
+	color:	#d7fcf5;
+	text-align: justify;
+}
+
+.portrait{
+	height: 307px;
+	float: left;
+	margin-right: 7px;
+}
+
+#media{
+	display: grid;
+	grid-template-columns: repeat(6, 36px);
+	justify-content: right;
+	margin-top: 60px;
+	margin-right: 15px;
+}
+
+#media a{
+	width: 36px;
+}
+#media a img{
+	width: inherit;
+}
+
+#media a img:hover, #media a img:active{
+	filter: saturate(0) invert(1) contrast(1.5);
+}
+
+.sep-bout-me{
+	margin: -80px -20px;
+	height: 154%;
+}
+
+.sep-vertical{
+	width: 2px;
+}
+
+.dark-green{
+	background-color: #219d84;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+/*CONTACTS*/
+#contacts{
+	background-color: #323232;
+	color: #ffff;
+	padding: 100px 11%;
+	height: 650px;
+}
+
+#contacts h3{
+	font-size: 19pt;
+	font-weight: 400;
+	font-family: 'Maven Pro', sans-serif;
+}
+
+#contact-form{
+	margin-top: 30px;
+	float: left;
+	margin-right: 28px;
+
+	width: 74.5%;
+	height: 84%;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 4fr;
+	grid-gap: 23px;
+}
+
+textarea{
+	padding-top: 2%;
+	text-indent: 3%;
+	font-size: 19px;
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	resize: none;
+	background-color: #454545;
+	border: none;
+	color: #bebebe;
+}
+
+#contact-form input{
+	text-indent: 3%;
+	font-size: 19px;
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	background-color: #454545;
+	border: none;
+	color: #bebebe;
+}
+
+#contact-form button{
+	color: #ffff;
+	border: none;
+	font-size: 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+	width: 130px;
+	height: 55px;
+	justify-self: end;
+}
+
+#contact-form button:hover, button:active{
+	outline: none;
+	background-color: #454545;
+}
+
+
+#contact-form input:focus, textarea:focus{
+	outline: 1px solid #ffff;
+}
+#contacts b{
+
+	font-weight: 900;
+}
+
+#contacts p{
+	margin-top: 20px;
+	font-size: 17px;
+	line-height: 2.3;
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	text-align: justify;
+}
+
+#other-contacts{
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: 34px auto;
+	grid-auto-rows: 1fr;
+	grid-auto-flow: row;
+	grid-gap: 9px;
+	
+}
+
+#other-contacts a{
+	color: #ffff;
+	text-decoration: none;
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+}
+
+#other-contacts a:hover{
+	color: #2eb398;
+}
+
+#other-contacts img{
+	height: 18px;
+}
+
+/*COPYRIGHT*/
+#copyright{
+	height: 50px;
+	background-color: #222222;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	color: #454545;
+	font-size: 15pt;
+	font-family: 'Maven Pro', sans-serif;
+	padding-left: 20px;
+}
