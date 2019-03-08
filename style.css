@@ -230,14 +230,15 @@
 		font-weight: 400;
 		font-size: 18px;
 		font-family: 'Maven Pro', sans-serif;
-		margin-bottom: 10px;
+		
 		
 	}
 	#about-me h3{
 		color:	#20816d;
+		margin-bottom: 10px;
 	}
 	
-	#about-me p{
+	p{
 		line-height: 1.8;
 		font-size: 12px;
 		font-family: 'Lato', sans-serif;
@@ -277,59 +278,53 @@
 	}
 	
 	#media a img:hover, #media a img:active{
+	
 		transform: scale(1.2);
-	}
-	
-	.sep-bout-me{
-		height: 90%;
-	}
-	
-	.sep-vertical{
-		width: 2px;
-	}
-	
-	.dark-green{
-		background-color: #219d84;
-	}
-	
-	.left{
-		float: left;
-	}
-	
-	.right{
-		float: right;
 	}
 	
 	/*CONTACTS*/
 	#contacts{
 		background-color: #323232;
 		color: #ffff;
-		padding: 100px 11%;
-		height: 650px;
+		padding: 14px 30px;
 	}
-	
+
+	#contacts>div{
+		box-sizing: border-box;
+		border-top: 1px solid #222222;
+		border-bottom: 1px solid #222222;
+		
+		height: auto;
+		min-height: 538px;
+	}
+	#contacts>div>div{
+		box-sizing: border-box;
+		width: 90%;
+		max-width: 824px;
+		margin: 42px auto;
+		padding: 0 21px;
+	}
+
 	#contacts h3{
-		color: #bebebe
+		color: #bebebe;
+		margin-bottom: 20px;
 	}
 	
 	#contact-form{
-		margin-top: 30px;
+
 		float: left;
-		margin-right: 28px;
-	
+		margin-right: 20px;
+		max-width: 587px;
 		width: 74.5%;
-		height: 84%;
 		display: grid;
-		grid-template-rows: 1fr 1fr 1fr 4fr;
-		grid-gap: 23px;
+		grid-auto-rows: auto;
+		grid-gap: 17px;	
 		
 	}
 	
 	textarea{
-		padding-top: 2%;
-		text-indent: 3%;
-		font-size: 19px;
-	
+		padding-top: 13px;
+		text-indent: 14px;
 		resize: none;
 		background-color: #454545;
 		border: none;
@@ -338,21 +333,18 @@
 		font-weight: 400;
 		font-size: 12px;
 		color: #bebebe;
-		
+		height: 138px;
 	}
 	
 	#contact-form input{
-		text-indent: 3%;
-		font-size: 19px;
+		text-indent: 14px;
+		font-size: 12px;
 		font-family: Lato, sans-serif;
 		font-weight: 400;
 		background-color: #454545;
 		border: none;
-
-		font-family: Lato, sans-serif;
-		font-weight: 400;
-		font-size: 12px;
 		color: #bebebe;
+		height: 37px;
 	}
 	
 	#contact-form button{
@@ -361,11 +353,12 @@
 		font-size: 12px;
 		font-weight: 700;
 		text-transform: uppercase;
-		width: 130px;
-		height: 55px;
+		width: 90px;
+		height: 36px;
 		justify-self: end;
 		color: #d7fcf5;
 		font-family: Lato, sans-serif;
+		background-color: #2eb398;
 	}
 	
 	#contact-form button:hover, button:active{
@@ -375,39 +368,35 @@
 	
 	
 	#contact-form input:focus, textarea:focus{
-		outline: 1px solid #ffff;
+		outline: 1px solid #fff;
 	}
 	#contacts b{
-	
+		color: #fff;
 		font-weight: 900;
 	}
 	
 	#contacts p{
-		margin-top: 20px;
-		font-size: 12px;
-		line-height: 2.3;
-		font-family: Lato, sans-serif;
-		font-weight: 400;
-		text-align: justify;
+		margin-top: -6px;
+	color: #bebebe;
 	}
 	
 	#other-contacts{
-		margin-top: 20px;
+		margin-top: 40px;
 		display: grid;
-		grid-template-columns: 34px auto;
+		grid-template-columns: 12px auto;
 		grid-auto-rows: 1fr;
 		grid-auto-flow: row;
 		grid-gap: 9px;
 		font-family: Lato, sans-serif;
 		font-weight: 700;
 		font-size: 12px;
-		
+		color: #bebebe;
 	}
 	
 	#other-contacts a{
-		color: #ffff;
+		color: #bebebe;
 		text-decoration: none;
-		
+		margin-top: -3px;
 	}
 	
 	#other-contacts a:hover{
@@ -415,18 +404,23 @@
 	}
 	
 	#other-contacts img{
-		height: 18px;
+		height: 12px;
 	}
 	
 	/*COPYRIGHT*/
 	#copyright{
-		height: 50px;
+		box-sizing: border-box;
+		height: 43px;
 		background-color: #222222;
-		display: flex;
-		justify-content: left;
-		align-items: center;
+		padding-top: 10px;
+	}
+
+	#copyright p{
 		color: #454545;
 		font-size: 12px;
 		font-family: 'Maven Pro', sans-serif;
-		padding-left: 20px;
+		max-width: 943px;
+		width: 90%;
+		margin: 0 auto;
+		
 	}
