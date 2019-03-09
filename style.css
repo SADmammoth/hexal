@@ -96,6 +96,7 @@
 		position: relative;
 		bottom: 25px;
 	}
+	
 	#left :not(:first-child)::before{
 		content: '\2022';
 		color: #484c5f;
@@ -281,6 +282,7 @@
 	
 	#media a{
 		margin: -2px;
+		display: inline-block;
 	}
 	#media a img{
 		width: inherit;
