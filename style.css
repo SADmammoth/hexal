@@ -36,6 +36,10 @@
 		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 		}
 	
+
+
+
+
 	/*HEADER*/
 	header{
 		height: 63px;
@@ -86,10 +90,9 @@
 	header a{
 		color: #fff;
 		text-decoration: none;
-	
 	}
+
 	header #left a{
-		
 		margin-left: 24px;
 	}
 
@@ -97,8 +100,13 @@
 		margin-right: 24px;
 	}
 	
-	header a:hover, header a[href='#portfolio']{
+	header a:hover{
 		color: #2eb398;
+	}
+	
+	header a[href='#portfolio']{
+		color: #2eb398;
+		pointer-events: none;
 	}
 	
 	#left{
@@ -128,6 +136,7 @@
 		bottom: 1.5px;
 		margin-left: -4px;
 	}
+
 	#right{
 		height: 100%;
 		width: 165px;
@@ -141,7 +150,8 @@
 		display: inline-block;
 		margin-top: 12px;
 	}
-	/*PORTFOLIO*/
+
+	/*PORTFOLIO section*/
 	#portfolio{
 		overflow: hidden;
 			text-align: center;
@@ -171,14 +181,16 @@
 			justify-items: center;
 			margin: -4.4%  auto 0 auto;
 			grid-gap: 2.5%;
+			position: relative;
+		
 	}
 	
-	#portfolio>div div:first-child{
+	#portfolio .content .row:first-child{
 		margin-top: 0;
 	}
 
 	
-	#portfolio>div .row:nth-child(odd)::before{
+	#portfolio .content .row:nth-child(odd)::before{
 		border-right: 1px solid #e4e9eb;
 		content: "";
 		width: 100%;
@@ -186,71 +198,130 @@
 		margin: 29% 0;
 	}
 
-	#portfolio>div .row:nth-child(odd)::after{
+	#portfolio .content .row:nth-child(odd)::after{
 		border-left: 1px solid #e4e9eb;
 		content: "";
 		width: 100%;
 		height: 50%;
 		margin: 29% 0;
 	}
-
+ 
+	/*Hexagon pictures for Chrome, Firefox, Opera*/
 	@supports(-webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) or (clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)) {
-	.hex{
-		object-fit: cover;
-		position: relative;
-		clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 6% 75%, 6% 26%);
-		-webkit-clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 6% 75%, 6% 26%);
-		margin: 0 -13px; 
+		.hex{
+			object-fit: cover;
+			position: relative;
+			clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 6% 75%, 6% 26%);
+			-webkit-clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 6% 75%, 6% 26%);
+			margin: 0 -13px; 
+		}
+
+		.pic-portfolio{
+			width: 116%
+		}
+
+		.portrait{
+			float: left;
+			margin-right: 3px;
+			width: 206px;
+		}
+	
 	}
 	
-	#myClip{
-		clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 6% 75%, 6% 26%);
-		
-	}
-	}
-	
+	/*Hexagon pictures for Edge*/
 	@supports (not (clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%))) {
-	.item{
-		overflow: hidden;
-		width: 100%;
-	}
 	
-		.item::before{
+		.hex-for-edge {
+			height: 208px;
+			width: 178px;
+			position: relative;
 			overflow: hidden;
-		position: relative;
-		left: 176px;
-		bottom: 179px;
-		content: "";
-		width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0 88px 52px 88px;
-	border-color: transparent #fff transparent #fff ;
+			margin: 2px auto;
+			border-radius: 90px/58px;
+		  }
+
+		  .hex-for-edge::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			border-left: 6vw solid #fff;
+			border-right: 6vw solid #fff;
+			border-bottom: 3.5vw solid transparent;
+			z-index: 1;
+			
+		  }
+		  
+		  .hex-for-edge::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			border-left: 6vw solid #fff;
+			border-right: 6vw solid #fff;
+			border-top: 3.5vw solid transparent;
+		  }
+		
+		  
+		.hex-for-edge img{
+			height: 208px;
+			width: 178px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		  .hex-for-edge-2::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 0;
+				height: 0;
+				border-left: 6vw solid #2eb398;
+				border-right: 6vw solid #2eb398;
+				border-bottom: 3.5vw solid transparent;
+				z-index: 1;
+		  }
+		  
+		  .hex-for-edge-2::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				height: 0;
+				border-left: 6vw solid #2eb398;
+				border-right: 6vw solid #2eb398;
+				border-top: 3.5vw solid transparent;
+		  }
+
+		  .hex-for-edge-2 {
+			height: 208px;
+			width: 178px;
+			position: relative;
+			overflow: hidden;
+			float: left;
+			margin-right: 16px;		
+		  }
+
+		  .hex-for-edge-2 img{
+			height: 208px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 206px;
+		}	
 	}
-	
-	.item::after{
-		overflow: hidden;
-		position: relative;
-		right: 180px;
-		top: 15px;
-		content: "";
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 52px 88px 0 88px;
-	border-color: transparent #fff transparent #fff ;
-	
-	}
-	
-	}
-	
-	.pic-portfolio{
-		object-fit: cover;
-		width: 116.5%;
-	}
-	
+
 	.slider{
-		margin-top: 47px;
+		margin-top: 44px;
 		margin-bottom: 8px;
 		margin-left: 8px;
 		float: left;
@@ -266,14 +337,14 @@
 		cursor: pointer;
 	}
 
-	.slider input:checked{
+	.slider input:checked, .slider input:hover{
 		appearance: none;
 		-webkit-appearance: none;
 		background: #8b8784;
 	}
 	
 
-	/*ABOUT ME*/
+	/*ABOUT ME section*/
 	#about-me{
 		background-color: #2eb398;
 		height: 20%;
@@ -283,7 +354,7 @@
 		padding: 12px 0;
 	}
 	
-	#about-me>div{
+	#about-me .content{
 		box-sizing: border-box;
 		border-left: 1px solid #219d84;
 		border-right: 1px solid #219d84;
@@ -293,7 +364,7 @@
 		max-width: 824px;
 		
 		margin: 0 auto;
-		padding: 56px 16px ;
+		padding: 56px 21px ;
 	}
 
 	h2, h1{
@@ -329,7 +400,6 @@
 		-moz-hyphens: auto;
 		hyphens: auto;
 		text-align: justify;
-  /* word-break: break-word; */
 	}
 
 
@@ -337,18 +407,13 @@
 		width: 100%;
 	}
 	
-	.portrait{
-		float: left;
-		margin-right: 3px;
-		width: 206px;
-	}
 	
 	#media{
-		margin-top: 38px;
+		margin-top: 39px;
 		height: 29px;
 		float: right;
 		display: block;
-		margin-right: 7px;
+		margin-right: 3px;
 	}
 	
 	#media a{
@@ -364,7 +429,10 @@
 		transform: scale(1.2);
 	}
 	
-	/*CONTACTS*/
+	
+	/*FOOTER*/
+
+	/*CONTACTS block*/
 	#contacts{
 		background-color: #323232;	
 		padding: 14px 30px;
@@ -378,7 +446,8 @@
 		height: auto;
 		min-height: 538px;
 	}
-	#contacts>div>div{
+	
+	#contacts>div .content{
 		box-sizing: border-box;
 		width: 90%;
 		max-width: 824px;
@@ -401,19 +470,17 @@
 		margin-right: 20px;
 		max-width: 587px;
 		width: 74.5%;
-		display: grid;
-		grid-auto-rows: auto;
-		grid-gap: 17px;	
 		
 	}
 	
 	textarea{
+		display: block;
+		width: 100%;
 		padding-top: 13px;
 		text-indent: 14px;
 		resize: none;
 		background-color: #454545;
 		border: none;
-
 		font-family: Lato, sans-serif;
 		font-weight: 400;
 		font-size: 12px;
@@ -422,6 +489,8 @@
 	}
 	
 	#contact-form input{
+		width: 100%;
+		display: block;
 		text-indent: 14px;
 		font-size: 12px;
 		font-family: Lato, sans-serif;
@@ -430,17 +499,18 @@
 		border: none;
 		color: #bebebe;
 		height: 37px;
+		margin-bottom: 17px;
 	}
 	
 	#contact-form button{
-
+		float: right;
+		margin-top: 17px;
 		border: none;
 		font-size: 12px;
 		font-weight: 700;
 		text-transform: uppercase;
 		width: 90px;
 		height: 36px;
-		justify-self: end;
 		color: #d7fcf5;
 		font-family: Lato, sans-serif;
 		background-color: #2eb398;
@@ -455,6 +525,7 @@
 	#contact-form input:focus, textarea:focus{
 		outline: 1px solid #fff;
 	}
+
 	#contacts b{
 		color: #fff;
 		font-weight: 900;
@@ -462,16 +533,11 @@
 	
 	#contacts p{
 		margin-top: -6px;
-	color: #bebebe;
+		color: #bebebe;
 	}
 	
 	#other-contacts{
-		margin-top: 40px;
-		display: grid;
-		grid-template-columns: 12px auto;
-		grid-auto-rows: 1fr;
-		grid-auto-flow: row;
-		grid-gap: 9px;
+		margin-top: 36px;
 		font-family: Lato, sans-serif;
 		font-weight: 700;
 		font-size: 12px;
@@ -479,9 +545,11 @@
 	}
 	
 	#other-contacts a{
+		margin-top: 6px;
+		display: block;
 		color: #bebebe;
 		text-decoration: none;
-		margin-top: -3px;
+		
 	}
 	
 	#other-contacts a:hover{
@@ -490,9 +558,16 @@
 	
 	#other-contacts img{
 		height: 12px;
+		margin-left: -3px;
+		vertical-align: middle;
+		margin-right: 8px;
+	}
+
+	#other-contacts span{
+		vertical-align: middle;
 	}
 	
-	/*COPYRIGHT*/
+	/*COPYRIGHT block*/
 	#copyright{
 		box-sizing: border-box;
 		height: 43px;
